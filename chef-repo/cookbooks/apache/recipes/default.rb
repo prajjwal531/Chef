@@ -46,30 +46,30 @@ end
 node["apache"]["sites"].each do |site_name, site_data|
    document_root="/srv/apache/#{site_name}"
 
- template "/etc/apache2/sites-available/#{site_name}.conf" do
-     source "custom.erb"
-     mode  "0644"
-     variables(
-             :document_root => document_root,
-             :port => site_data["port"]
-       )
-     #notifies :restart, "service[apache2]"
- end
+   template "/etc/apache2/sites-available/#{site_name}.conf" do
+       source "custom.erb"
+       mode  "0644"
+       variables(
+               :document_root => document_root,
+               :port => site_data["port"]
+         )
+       #notifies :restart, "service[apache2]"
+   end
 
- directory document_root do
-    mode "0755"
-    recursive true
- end
+   directory document_root do
+      mode "0755"
+      recursive true
+   end
 
- template "#{document_root}/index.html" do
-  source "index.html.erb"
-  mode "0655"
-  variables(
-            :site_name => site_name,
-            :port => site_data["port"]
-      )
- end
-  
- execute "a2ensite #{site_name}.conf"
- execute "service apache2 restart"
+   template "#{document_root}/index.html" do
+    source "index.html.erb"
+    mode "0655"
+    variables(
+              :site_name => site_name,
+              :port => site_data["port"]
+        )
+   end
+
+   execute "a2ensite #{site_name}.conf"
+   execute "service apache2 restart"
 end
