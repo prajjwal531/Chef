@@ -26,7 +26,7 @@ package 'apache2' do
    action :install
 end
 
-package 'vim'
+#package 'vim'
 
 #service 'apache2' do
  #   action [:nothing, :enable]
@@ -44,6 +44,7 @@ execute "mv /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-ava
 end
 
 node["apache"]["sites"].each do |site_name, site_data|
+
    document_root="/srv/apache/#{site_name}"
 
    template "/etc/apache2/sites-available/#{site_name}.conf" do
@@ -71,5 +72,5 @@ node["apache"]["sites"].each do |site_name, site_data|
    end
 
    execute "a2ensite #{site_name}.conf"
-   execute "service apache2 restart"
+execute "service apache2 restart"
 end
