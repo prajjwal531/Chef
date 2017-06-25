@@ -1,0 +1,98 @@
+Generated at 2017-06-24 06:36:37 +0000
+Mixlib::ShellOut::ShellCommandFailed: service[apache2] (apache::default line 31) had an error: Mixlib::ShellOut::ShellCommandFailed: Expected process to exit with [0], but received '1'
+---- Begin output of /etc/init.d/apache2 start ----
+STDOUT: * Starting web server apache2
+ * 
+ * The apache2 configtest failed.
+STDERR: Output of config test was:
+apache2: Syntax error on line 219 of /etc/apache2/apache2.conf: Could not open configuration file /etc/apache2/sites-enabled/000-default.conf: No such file or directory
+Action 'configtest' failed.
+The Apache error log may have more information.
+---- End output of /etc/init.d/apache2 start ----
+Ran /etc/init.d/apache2 start returned 1
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/mixlib-shellout-2.2.7/lib/mixlib/shellout.rb:289:in `invalid!'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/mixlib-shellout-2.2.7/lib/mixlib/shellout.rb:276:in `error!'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/mixin/shell_out.rb:128:in `shell_out_with_systems_locale!'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/provider/service/init.rb:60:in `start_service'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/provider/service/init.rb:80:in `restart_service'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/provider/service.rb:167:in `block in action_restart'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/mixin/why_run.rb:52:in `add_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/provider.rb:176:in `converge_by'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/provider/service.rb:166:in `action_restart'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/provider.rb:145:in `run_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/resource.rb:622:in `run_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/runner.rb:69:in `run_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/runner.rb:127:in `run_delayed_notification'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/runner.rb:115:in `block in run_delayed_notifications'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/runner.rb:114:in `each'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/runner.rb:114:in `run_delayed_notifications'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/runner.rb:104:in `converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/client.rb:670:in `block in converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/client.rb:665:in `catch'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/client.rb:665:in `converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/client.rb:704:in `converge_and_save'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/client.rb:284:in `run'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/application.rb:295:in `block in fork_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/application.rb:283:in `fork'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/application.rb:283:in `fork_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/application.rb:248:in `block in run_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/local_mode.rb:44:in `with_server_connectivity'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/application.rb:236:in `run_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/application/client.rb:464:in `sleep_then_run_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/application/client.rb:451:in `block in interval_run_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/application/client.rb:450:in `loop'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/application/client.rb:450:in `interval_run_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/application/client.rb:434:in `run_application'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/application.rb:59:in `run'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/bin/chef-client:26:in `<top (required)>'
+/usr/bin/chef-client:58:in `load'
+/usr/bin/chef-client:58:in `<main>'
+
+>>>> Caused by Mixlib::ShellOut::ShellCommandFailed: Expected process to exit with [0], but received '1'
+---- Begin output of /etc/init.d/apache2 start ----
+STDOUT: * Starting web server apache2
+ * 
+ * The apache2 configtest failed.
+STDERR: Output of config test was:
+apache2: Syntax error on line 219 of /etc/apache2/apache2.conf: Could not open configuration file /etc/apache2/sites-enabled/000-default.conf: No such file or directory
+Action 'configtest' failed.
+The Apache error log may have more information.
+---- End output of /etc/init.d/apache2 start ----
+Ran /etc/init.d/apache2 start returned 1
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/mixlib-shellout-2.2.7/lib/mixlib/shellout.rb:289:in `invalid!'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/mixlib-shellout-2.2.7/lib/mixlib/shellout.rb:276:in `error!'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/mixin/shell_out.rb:128:in `shell_out_with_systems_locale!'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/provider/service/init.rb:60:in `start_service'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/provider/service/init.rb:80:in `restart_service'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/provider/service.rb:167:in `block in action_restart'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/mixin/why_run.rb:52:in `add_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/provider.rb:176:in `converge_by'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/provider/service.rb:166:in `action_restart'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/provider.rb:145:in `run_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/resource.rb:622:in `run_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/runner.rb:69:in `run_action'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/runner.rb:127:in `run_delayed_notification'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/runner.rb:115:in `block in run_delayed_notifications'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/runner.rb:114:in `each'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/runner.rb:114:in `run_delayed_notifications'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/runner.rb:104:in `converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/client.rb:670:in `block in converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/client.rb:665:in `catch'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/client.rb:665:in `converge'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/client.rb:704:in `converge_and_save'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/client.rb:284:in `run'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/application.rb:295:in `block in fork_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/application.rb:283:in `fork'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/application.rb:283:in `fork_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/application.rb:248:in `block in run_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/local_mode.rb:44:in `with_server_connectivity'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/application.rb:236:in `run_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/application/client.rb:464:in `sleep_then_run_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/application/client.rb:451:in `block in interval_run_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/application/client.rb:450:in `loop'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/application/client.rb:450:in `interval_run_chef_client'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/application/client.rb:434:in `run_application'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/lib/chef/application.rb:59:in `run'
+/opt/chefdk/embedded/lib/ruby/gems/2.3.0/gems/chef-12.19.36/bin/chef-client:26:in `<top (required)>'
+/usr/bin/chef-client:58:in `load'
+/usr/bin/chef-client:58:in `<main>'
