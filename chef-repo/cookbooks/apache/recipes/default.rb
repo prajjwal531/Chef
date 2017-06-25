@@ -72,5 +72,5 @@ node["apache"]["sites"].each do |site_name, site_data|
    end
 
    execute "a2ensite #{site_name}.conf"
-execute "service apache2 restart"
+   execute "service apache2 reload"
 end
