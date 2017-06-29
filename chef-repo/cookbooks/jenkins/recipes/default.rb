@@ -15,8 +15,33 @@
 #end
 
 execute "add-apt-repository ppa:#{node["jenkins"]["java_version"]}"
-execute "apt-get update"
+
 
 package "oracle-java8-installer" do
   action :install
+end
+
+template "/home/vagrant/jenkins.key" do
+      source "jenkins_key.erb"
+      action :create
+end
+
+execute "cd /home/vagrant/; apt-key add jenkins.key" do
+   only_if do
+     File.exist("/home/vagrant/jenkins.key")
+   end
+end
+
+file "/etc/apt/sources.list.d/jenkins.list" do
+  content "deb http://pkg.jenkins.io/debian-stable binary/"
+end
+
+execute "apt-get update"
+
+packge "jenkins" do
+  action :install
+end
+
+service "jenkins" do
+  action :start
 end
