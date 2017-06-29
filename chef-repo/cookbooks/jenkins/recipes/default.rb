@@ -28,7 +28,7 @@ end
 
 execute "cd /home/vagrant/; apt-key add jenkins.key" do
    only_if do
-     File.exist("/home/vagrant/jenkins.key")
+     File.exist?("/home/vagrant/jenkins.key")
    end
 end
 
@@ -38,7 +38,7 @@ end
 
 execute "apt-get update"
 
-packge "jenkins" do
+package "jenkins" do
   action :install
 end
 
