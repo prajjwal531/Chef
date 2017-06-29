@@ -6,6 +6,7 @@ description 'Installs/Configures jenkins-server'
 long_description 'Installs/Configures jenkins-server'
 version '0.1.0'
 chef_version '>= 12.1' if respond_to?(:chef_version)
+depends 'jenkins', '~> 2.2.2'
 
 # The `issues_url` points to the location where issues for this cookbook are
 # tracked.  A `View Issues` link will be displayed on this cookbook's page when
