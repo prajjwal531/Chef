@@ -38,7 +38,7 @@ end
 
 execute "apt-get update"
 
-packge "jenkins" do
+package "jenkins" do
   action :install
 end
 
